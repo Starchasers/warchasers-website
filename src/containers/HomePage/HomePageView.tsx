@@ -10,8 +10,7 @@ interface IHomePageViewProps extends IHomePageProps, IHomePageStateProps {}
 
 const HomePageView = (props: IHomePageViewProps) => (
   <ContentPage>
-    {console.log(props)}
-    <Container>asd</Container>
+    <Container>{props.contentPage.fields.title}</Container>
   </ContentPage>
 )
 
