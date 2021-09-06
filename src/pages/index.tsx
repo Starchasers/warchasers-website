@@ -12,12 +12,12 @@ const Home = (props: IHomePageProps) => (
   </Layout>
 )
 
-export const getStaticProps = async (): Promise<IHomePageProps> => {
+export const getStaticProps = async (): Promise<{ props: IHomePageProps }> => {
   const layout = await getLayoutData()
 
   return {
     props: {
-      layout
+      ...layout
     }
   }
 }

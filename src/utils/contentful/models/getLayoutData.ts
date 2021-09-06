@@ -1,13 +1,16 @@
-export interface ILayoutData {}
+import getOneContentfulData from '../getOneContentfulData'
+import { ILayout } from '../../../../@types/generated/contentful'
 
-/**
- * See getExampleLayoutData.ts for example layout
- */
+export interface ILayoutData {
+  layout: ILayout
+}
 
 const getLayoutData = async (): Promise<ILayoutData> => {
-  const [] = await Promise.all([])
+  const [layout] = await Promise.all([getOneContentfulData<ILayout>('layout')])
 
-  return {}
+  return {
+    layout
+  }
 }
 
 export default getLayoutData

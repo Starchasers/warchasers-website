@@ -9,11 +9,11 @@ const Page = styled('div')`
   min-height: 100vh;
   width: 100%;
 
-  background: ${(props) => props.theme.colors.npwBase01};
+  background: ${(props) => props.theme.colors.warBase01};
 
   grid-template-columns: auto;
   grid-template-areas:
-    'nav'
+    'header'
     'content'
     'footer';
   grid-template-rows: auto 1fr auto;
@@ -23,7 +23,7 @@ const Page = styled('div')`
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
-    grid-template-rows: 5px auto auto;
+    grid-template-rows: auto 1fr auto;
   }
 `
 

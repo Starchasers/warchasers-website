@@ -14,18 +14,18 @@ interface colorVariant {
 
 const colorVariants: colorVariant = {
   primary: {
-    unset: 'npwPrimary',
-    hover: 'npwPrimaryHover',
-    active: 'npwPrimaryActive',
-    focus: 'npwPrimaryActive',
-    disabled: 'npwPrimaryActive'
+    unset: 'warPrimary',
+    hover: 'warPrimaryHover',
+    active: 'warPrimaryActive',
+    focus: 'warPrimaryActive',
+    disabled: 'warPrimaryActive'
   },
   secondary: {
-    unset: 'npwPositive',
-    hover: 'npwPositiveHover',
-    active: 'npwPositiveHover',
-    focus: 'npwPositiveHover',
-    disabled: 'npwSuccessBgNight'
+    unset: 'warPositive',
+    hover: 'warPositiveHover',
+    active: 'warPositiveHover',
+    focus: 'warPositiveHover',
+    disabled: 'warSuccessBgNight'
   },
   transparent: {
     unset: 'transparent',
