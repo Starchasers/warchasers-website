@@ -3,7 +3,7 @@ import { css } from '@emotion/css'
 import Link from 'next/link'
 import React, { useMemo } from 'react'
 
-import TableOfContentBlock from '../blocks/TableOfContent'
+import NavigationMenu from '../blocks/NavigationMenu'
 import DesktopContainer from './DesktopContainer'
 import changeTextToHtmlId from '../../utils/changeTextToHtmlId'
 
@@ -34,19 +34,18 @@ const TableOfContent = (props: ITableOfContent) => {
         grid-area: table-of-content;
       `}
     >
-      <TableOfContentBlock>
-        <TableOfContentBlock.Item>
+      <NavigationMenu>
+        <NavigationMenu.Item>
           <b>Table of contents</b>
-        </TableOfContentBlock.Item>
-        <hr />
+        </NavigationMenu.Item>
         {headings.map((heading) => (
-          <TableOfContentBlock.Item key={heading.value}>
+          <NavigationMenu.Item key={heading.value}>
             <Link href={`${props.baseUrl}#${changeTextToHtmlId(heading.value)}`} passHref>
               <a>{heading.value}</a>
             </Link>
-          </TableOfContentBlock.Item>
+          </NavigationMenu.Item>
         ))}
-      </TableOfContentBlock>
+      </NavigationMenu>
     </DesktopContainer>
   )
 }

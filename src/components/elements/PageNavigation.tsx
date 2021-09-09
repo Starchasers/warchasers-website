@@ -19,7 +19,6 @@ const PageNavigation = (props: IPageNavigation) => (
       <NavigationMenu.Item>
         <b>Navigation</b>
       </NavigationMenu.Item>
-      <hr />
       {props.contentPages?.map((contentPage, index) => (
         <NavigationMenu.Item
           key={contentPage.sys.id + index}

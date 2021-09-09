@@ -40,11 +40,11 @@ const DocumentContainer = styled('div')`
   }
 
   a {
-    color: ${(props) => props.theme.colors.warLink};
+    color: ${(props) => props.theme.colors.warLinkNight};
     transition: all ${(props) => props.theme.transitions.normal};
 
     &:hover {
-      color: ${(props) => props.theme.colors.warLinkHover};
+      color: ${(props) => props.theme.colors.warLinkNightHover};
     }
   }
 
