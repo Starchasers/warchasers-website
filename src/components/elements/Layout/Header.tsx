@@ -15,19 +15,21 @@ const Header = (props: Omit<Omit<LayoutProps, 'title'>, 'children'>) => (
     <Container>
       <Page.Header.Nav>
         <Link href={'/'} passHref>
-          <a style={{ width: '32px', height: '32px' }}>
-            <FontAwesomeIcon icon={faFortAwesomeAlt} size={'2x'} />
+          <a>
+            <div style={{ width: '32px', height: '32px' }}>
+              <FontAwesomeIcon icon={faFortAwesomeAlt} size={'2x'} />
+            </div>
+            <DesktopContainer>
+              <Page.Header.Title>{props.layout.fields.projectNameLong}</Page.Header.Title>
+            </DesktopContainer>
+            <TabletContainer>
+              <Page.Header.Title>{props.layout.fields.projectNameLong}</Page.Header.Title>
+            </TabletContainer>
+            <MobileContainer>
+              <Page.Header.Title>{props.layout.fields.projectNameShort}</Page.Header.Title>
+            </MobileContainer>
           </a>
         </Link>
-        <DesktopContainer>
-          <Page.Header.Title>{props.layout.fields.projectNameLong}</Page.Header.Title>
-        </DesktopContainer>
-        <TabletContainer>
-          <Page.Header.Title>{props.layout.fields.projectNameLong}</Page.Header.Title>
-        </TabletContainer>
-        <MobileContainer>
-          <Page.Header.Title>{props.layout.fields.projectNameShort}</Page.Header.Title>
-        </MobileContainer>
       </Page.Header.Nav>
     </Container>
   </Page.Header>
