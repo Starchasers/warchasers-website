@@ -11,7 +11,8 @@ const DocumentContainer = styled('div')`
     line-height: 28px;
   }
 
-  b {
+  b,
+  strong {
     cursor: text;
     font-weight: 700;
   }
@@ -72,6 +73,17 @@ const DocumentContainer = styled('div')`
     padding: 1px 5px;
     background: rgba(69, 70, 72, 0.64);
     border-radius: 2px;
+  }
+
+  h2 {
+    padding-top: 50px;
+    margin-bottom: 20px;
+    font-size: 27.5px;
+  }
+
+  hr {
+    margin: 25px 0;
+    opacity: 0.25;
   }
 `
 

@@ -8,6 +8,27 @@ const NavigationMenu = styled('ol')`
   flex-direction: column;
   position: sticky;
   top: 100px;
+
+  hr {
+    width: 100%;
+    opacity: 0.25;
+    margin-top: -2.5px;
+
+    @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+      margin-top: -5px;
+    }
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    > li {
+      padding: 5px;
+      margin: 0 5px;
+    }
+  }
 `
 
 type NavigationMenuProps = typeof NavigationMenu & {

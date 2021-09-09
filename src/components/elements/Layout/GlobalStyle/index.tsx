@@ -8,6 +8,7 @@ const GlobalStyle = injectGlobal`
 
    html {
      overflow-y: scroll;
+     scroll-behavior: smooth;
    }
 
    body {
