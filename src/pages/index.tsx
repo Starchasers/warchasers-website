@@ -15,7 +15,7 @@ const Home = (props: IHomePageProps) => (
 
 export const getStaticProps = async (): Promise<{ props: IHomePageProps }> => {
   const layout = await getLayoutData()
-  const contentPage = await getContentPageData('index')
+  const contentPage = await getContentPageData('')
 
   return {
     props: {

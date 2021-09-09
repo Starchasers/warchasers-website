@@ -1100,6 +1100,18 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@contentful/rich-text-react-renderer@^15.3.3":
+  version "15.3.3"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-react-renderer/-/rich-text-react-renderer-15.3.3.tgz#a788daefc9ba70156bddf8b409120588aaa070fa"
+  integrity sha512-UyvJ4nJQ0bGNRdHCnulbGDKpacIuBCu+bZG3lek/SHvLEI2R5YTf8LDX0PMIFBR17rCARcsqY6NUMzTdL/pLUA==
+  dependencies:
+    "@contentful/rich-text-types" "^15.3.3"
+
+"@contentful/rich-text-types@^15.3.3":
+  version "15.3.3"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-15.3.3.tgz#92e478abce9c2dde4e68324c4fddfa5d3161a980"
+  integrity sha512-eT16r2G/bZmVyP2vXUx2n3RWY5W4IaeZJaxFDGFewLUE8Lw8sX+AW3gQAaSe8A2pHxNkOdpotKGOMxGyH7i5cA==
+
 "@emotion/babel-plugin@^11.0.0", "@emotion/babel-plugin@^11.3.0":
   version "11.3.0"
   resolved "https://registry.yarnpkg.com/@emotion/babel-plugin/-/babel-plugin-11.3.0.tgz#3a16850ba04d8d9651f07f3fb674b3436a4fb9d7"

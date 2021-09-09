@@ -4,13 +4,18 @@ import { IHomePageProps } from '../../pages'
 import { IHomePageStateProps } from './useHomePage'
 
 import ContentPage from '../../components/blocks/ContentPage'
-import Container from '../../components/elements/Container'
+import PageNavigation from '../../components/elements/PageNavigation'
 
 interface IHomePageViewProps extends IHomePageProps, IHomePageStateProps {}
 
 const HomePageView = (props: IHomePageViewProps) => (
   <ContentPage>
-    <Container>{props.contentPage.fields.title}</Container>
+    <ContentPage.Container>
+      <PageNavigation
+        contentPages={props.layout.fields.contentPages}
+        activePage={props.contentPage}
+      />
+    </ContentPage.Container>
   </ContentPage>
 )
 
