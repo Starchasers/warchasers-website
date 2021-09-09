@@ -59,6 +59,13 @@ const DocumentContainer = styled('div')`
   ol {
     list-style: decimal;
   }
+
+  li {
+    p {
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+  }
 `
 
 export default DocumentContainer
