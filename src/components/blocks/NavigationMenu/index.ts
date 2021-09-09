@@ -9,13 +9,25 @@ const NavigationMenu = styled('ol')`
   position: sticky;
   top: 100px;
 
-  hr {
-    width: 100%;
-    opacity: 0.25;
-    margin-top: -2.5px;
+  > li:first-of-type {
+    position: relative;
+    margin-bottom: 10px;
+
+    &::after {
+      position: absolute;
+      content: '';
+      height: 2px;
+      bottom: -7.5px;
+      left: 0;
+      right: 0;
+      background: #ebefff;
+      opacity: 0.25;
+    }
 
     @media (max-width: ${(props) => props.theme.breakpoints.md}) {
-      margin-top: -5px;
+      width: calc(100% - 10px);
+      text-align: center;
+      margin-bottom: 20px;
     }
   }
 
