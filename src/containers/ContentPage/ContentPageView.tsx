@@ -14,7 +14,13 @@ const options = {
   renderNode: {
     [INLINES.HYPERLINK]: (node, children) => (
       <Link href={node.data.uri} passHref>
-        <a>{children}</a>
+        {node.data.url[0] === '/' ? (
+          <a>{children}</a>
+        ) : (
+          <a target={'_blank'} rel='noreferrer noopener'>
+            {children}
+          </a>
+        )}
       </Link>
     )
   }
