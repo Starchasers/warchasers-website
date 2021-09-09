@@ -15,7 +15,7 @@ const Header = (props: Omit<Omit<LayoutProps, 'title'>, 'children'>) => (
     <Container>
       <Page.Header.Nav>
         <Link href={'/'} passHref>
-          <a>
+          <a style={{ width: '32px', height: '32px' }}>
             <FontAwesomeIcon icon={faFortAwesomeAlt} size={'2x'} />
           </a>
         </Link>
