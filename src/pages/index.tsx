@@ -8,7 +8,11 @@ import getContentPageData, { IContentPageData } from '../utils/contentful/models
 export interface IHomePageProps extends ILayoutData, IContentPageData {}
 
 const Home = (props: IHomePageProps) => (
-  <Layout {...props}>
+  <Layout
+    {...props}
+    title={props.contentPage?.fields.title}
+    metaTags={props.contentPage.fields.metaTags}
+  >
     <HomePage {...props} />
   </Layout>
 )

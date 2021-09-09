@@ -11,7 +11,11 @@ import ContentPage from '../containers/ContentPage'
 export interface IContentPageProps extends ILayoutData, IContentPageData {}
 
 const IdPage = (props: IContentPageProps) => (
-  <Layout {...props} title={props.contentPage?.fields.title}>
+  <Layout
+    {...props}
+    title={props.contentPage?.fields.title}
+    metaTags={props.contentPage.fields.metaTags}
+  >
     <ContentPage {...props} />
   </Layout>
 )

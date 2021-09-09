@@ -7,6 +7,9 @@ export interface IContentPageFields {
   /** Slug */
   slug: string
 
+  /** Meta tags */
+  metaTags: IMetaTag[]
+
   /** Title */
   title: string
 
@@ -41,6 +44,9 @@ export interface ILayoutFields {
   /** Project name short */
   projectNameShort: string
 
+  /** Meta tags */
+  metaTags: IMetaTag[]
+
   /** ContentPages */
   contentPages: IContentPage[]
 }
@@ -62,7 +68,32 @@ export interface ILayout extends Entry<ILayoutFields> {
   }
 }
 
-export type CONTENT_TYPE = 'contentPage' | 'layout'
+export interface IMetaTagFields {
+  /** Title */
+  title: string
+
+  /** Content */
+  content: Record<string, any>
+}
+
+export interface IMetaTag extends Entry<IMetaTagFields> {
+  sys: {
+    id: string
+    type: string
+    createdAt: string
+    updatedAt: string
+    locale: string
+    contentType: {
+      sys: {
+        id: 'metaTag'
+        linkType: 'ContentType'
+        type: 'Link'
+      }
+    }
+  }
+}
+
+export type CONTENT_TYPE = 'contentPage' | 'layout' | 'metaTag'
 
 export type LOCALE_CODE = 'pl-PL'
 
