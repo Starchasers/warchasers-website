@@ -11,11 +11,10 @@ const GlobalStyle = injectGlobal`
    }
 
    body {
-     font-family: 'Lato', sans-serif;
+     font-family: 'Roboto', sans-serif;
      font-size: 16px;
      line-height: 1.2;
      color: #333333;
-     overflow-x: hidden;
      font-weight: 400;
    }
  

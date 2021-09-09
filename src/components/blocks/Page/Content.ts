@@ -6,7 +6,7 @@ const Content = styled('main')`
   min-height: 125px;
   z-index: 1;
 
-  background: rgb(37, 37, 50);
+  background: #252532;
 `
 
 export default Content
