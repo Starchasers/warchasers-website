@@ -66,6 +66,13 @@ const DocumentContainer = styled('div')`
       margin-bottom: 6px;
     }
   }
+
+  code {
+    font-family: monospace;
+    padding: 1px 5px;
+    background: rgba(69, 70, 72, 0.64);
+    border-radius: 2px;
+  }
 `
 
 export default DocumentContainer
