@@ -9,8 +9,6 @@ const Page = styled('div')`
   min-height: 100vh;
   width: 100%;
 
-  background: ${(props) => props.theme.colors.warBase01};
-
   grid-template-columns: auto;
   grid-template-areas:
     'header'

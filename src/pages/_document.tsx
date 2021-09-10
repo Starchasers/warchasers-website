@@ -13,7 +13,7 @@ class MyDocument extends Document {
           />
           <link rel='stylesheet' href='/reset.css' />
         </Head>
-        <body>
+        <body style={{ backgroundColor: '#252532' }}>
           <Main />
           <NextScript />
         </body>
