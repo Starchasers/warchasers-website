@@ -86,6 +86,10 @@ const DocumentContainer = styled('div')`
     margin: 25px 0;
     opacity: 0.25;
   }
+
+  > div.image-container {
+    margin: 25px 0 !important;
+  }
 `
 
 export default DocumentContainer

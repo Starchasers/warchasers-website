@@ -33,7 +33,11 @@ const options: Options = {
     },
     [BLOCKS.EMBEDDED_ASSET]: (node) => {
       if ((node as Block).data?.target?.fields?.file?.contentType === 'image/png') {
-        return <ContentfulImage {...node.data.target} />
+        return (
+          <div className={'image-container'}>
+            <ContentfulImage {...node.data.target} />
+          </div>
+        )
       }
       return null
     }
