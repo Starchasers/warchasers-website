@@ -9,6 +9,7 @@ const DocumentContainer = styled('div')`
   p {
     margin: 18px 0;
     line-height: 28px;
+    word-break: break-word;
   }
 
   b,
