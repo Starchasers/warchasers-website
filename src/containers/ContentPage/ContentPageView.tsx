@@ -1,5 +1,5 @@
-import { BLOCKS, INLINES } from '@contentful/rich-text-types'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { BLOCKS, INLINES, Text } from '@contentful/rich-text-types'
+import { documentToReactComponents, Options } from '@contentful/rich-text-react-renderer'
 import React from 'react'
 import Link from 'next/link'
 
@@ -9,24 +9,26 @@ import ContentPage from '../../components/blocks/ContentPage'
 import PageNavigation from '../../components/elements/PageNavigation'
 import TableOfContent from '../../components/elements/TableOfContent'
 import changeTextToHtmlId from '../../utils/changeTextToHtmlId'
+import LinkIcon from '../../components/elements/LinkIcon'
 
 interface IContentPageViewProps extends IContentPageProps, IContentPageStateProps {}
 
-const options = {
+const options: Options = {
   renderNode: {
     [INLINES.HYPERLINK]: (node, children) => (
       <Link href={node.data.uri} passHref>
         {node.data.uri[0] === '/' ? (
           <a>{children}</a>
         ) : (
-          <a target={'_blank'} rel='noreferrer noopener'>
+          <a target={'_blank'} rel='noreferrer noopener' title={node.data.uri.split('/')?.[2]}>
             {children}
+            <LinkIcon />
           </a>
         )}
       </Link>
     ),
     [BLOCKS.HEADING_2]: (node, children) => {
-      return <h2 id={changeTextToHtmlId(node?.content[0]?.value)}>{children}</h2>
+      return <h2 id={changeTextToHtmlId((node?.content[0] as Text)?.value)}>{children}</h2>
     }
   }
 }
