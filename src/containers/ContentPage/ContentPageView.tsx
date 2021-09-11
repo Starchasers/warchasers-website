@@ -1,4 +1,4 @@
-import { BLOCKS, INLINES, Text } from '@contentful/rich-text-types'
+import { Block, BLOCKS, INLINES, Text } from '@contentful/rich-text-types'
 import { documentToReactComponents, Options } from '@contentful/rich-text-react-renderer'
 import React from 'react'
 import Link from 'next/link'
@@ -10,6 +10,7 @@ import PageNavigation from '../../components/elements/PageNavigation'
 import TableOfContent from '../../components/elements/TableOfContent'
 import changeTextToHtmlId from '../../utils/changeTextToHtmlId'
 import LinkIcon from '../../components/elements/LinkIcon'
+import ContentfulImage from '../../utils/contentful/ContentfulImage'
 
 interface IContentPageViewProps extends IContentPageProps, IContentPageStateProps {}
 
@@ -29,6 +30,12 @@ const options: Options = {
     ),
     [BLOCKS.HEADING_2]: (node, children) => {
       return <h2 id={changeTextToHtmlId((node?.content[0] as Text)?.value)}>{children}</h2>
+    },
+    [BLOCKS.EMBEDDED_ASSET]: (node) => {
+      if ((node as Block).data?.target?.fields?.file?.contentType === 'image/png') {
+        return <ContentfulImage {...node.data.target} />
+      }
+      return null
     }
   }
 }
