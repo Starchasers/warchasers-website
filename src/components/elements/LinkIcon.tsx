@@ -16,7 +16,7 @@ const LinkIcon = () => (
       }
     `}
   >
-    <FontAwesomeIcon icon={faExternalLinkAlt} />
+    <FontAwesomeIcon icon={faExternalLinkAlt} style={{ width: '10px', height: '10px' }} />
   </span>
 )
 
