@@ -12,8 +12,8 @@ const DocumentContainer = styled('div')`
     word-break: break-word;
   }
 
-  b,
-  strong {
+  p > b,
+  p > strong {
     cursor: text;
     font-weight: 700;
   }
