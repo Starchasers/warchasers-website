@@ -13,7 +13,7 @@ export interface IContentPageProps extends ILayoutData, IContentPageData {}
 const IdPage = (props: IContentPageProps) => (
   <Layout
     {...props}
-    title={props.contentPage?.fields.title}
+    title={`${props.contentPage?.fields.title} | ${props.layout.fields.projectNameShort}`}
     metaTags={props.contentPage.fields.metaTags}
   >
     <ContentPage {...props} />

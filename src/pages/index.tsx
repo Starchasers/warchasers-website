@@ -10,7 +10,7 @@ export interface IHomePageProps extends ILayoutData, IContentPageData {}
 const Home = (props: IHomePageProps) => (
   <Layout
     {...props}
-    title={props.contentPage?.fields.title}
+    title={props.layout?.fields.defaultTitle}
     metaTags={props.contentPage.fields.metaTags}
   >
     <HomePage {...props} />
