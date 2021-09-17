@@ -44,15 +44,11 @@ const HomePageView = (props: IHomePageViewProps) => (
           />
         </MobileContainer>
         <h1
+          style={{ fontSize: '32px', lineHeight: '40px', textAlign: 'center', margin: '24px 0' }}
           className={css`
-            font-size: 32px;
-            line-height: 40px;
-            text-align: center;
-            margin: 24px 0;
-
             @media (max-width: ${theme.breakpoints.md}) {
-              font-size: 28px;
-              line-height: 32px;
+              font-size: 28px !important;
+              line-height: 32px !important;
             }
           `}
         >
