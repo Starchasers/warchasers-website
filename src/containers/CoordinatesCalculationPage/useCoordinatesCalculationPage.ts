@@ -34,7 +34,7 @@ const useCoordinatesCalculationPage = (
 
       setInAllowedRange(isValid)
     } catch (e) {
-      console.error(e)
+      console.error(props.coordinatesConfiguration.fields.jsFunctioon, e)
     }
   }
 
