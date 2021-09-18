@@ -9,6 +9,8 @@ const NavigationMenu = styled('ol')`
   flex-direction: column;
   position: sticky;
   top: 100px;
+  overflow-y: auto;
+  max-height: calc(100vh - 125px);
 
   > li:first-of-type {
     position: relative;

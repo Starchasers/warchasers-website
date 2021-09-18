@@ -25,6 +25,7 @@ const CoordinatesCalculationPageView = (props: ICoordinatesCalculationPageViewPr
         activePage={props.contentPage}
       />
       <ContentPage.DocumentContainer>
+        <ContentPage.Title>{props.contentPage.fields.title}</ContentPage.Title>
         {documentToReactComponents(props.contentPage.fields.content, options)}
         <form onSubmit={props.form.handleSubmit(props.onSubmit)}>
           <CoordinatesBlock>
