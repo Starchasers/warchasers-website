@@ -1,16 +1,17 @@
 import styled from '@emotion/styled'
+import theme from '../../../../assets/theme'
 
 const Nav = styled('nav')`
   padding: 32px 0;
   background: #21212d;
-  color: ${(props) => props.theme.colors.warBase01};
+  color: #ffffff;
 
   a {
-    color: ${(props) => props.theme.colors.warBase01};
-    transition: ${(props) => props.theme.transitions.normal};
+    color: #ffffff;
+    transition: ${theme.transitions.normal};
 
     &:hover {
-      color: ${(props) => props.theme.colors.warBase04};
+      color: #d7d7d7;
     }
   }
 `

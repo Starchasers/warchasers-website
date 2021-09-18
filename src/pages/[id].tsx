@@ -34,11 +34,13 @@ export const getStaticProps: GetStaticProps<IContentPageProps, TGetStaticPaths> 
   }
 }
 
+const customPages = ['/', '/coordinates-calculation']
+
 export const getStaticPaths: GetStaticPaths<TGetStaticPaths> = async () => {
   const contentPageData = await getAllContentPageData()
 
   const paths = contentPageData.contentPages
-    .filter((contentPage) => contentPage.fields.slug !== '/')
+    .filter((contentPage) => !customPages.find((c) => c === contentPage.fields.slug))
     .map((contentPage) => ({
       params: { id: contentPage.fields.slug.slice(1) }
     }))

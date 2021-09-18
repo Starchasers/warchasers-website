@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
-
+import theme from '../../../assets/theme'
 import hexToRGB from '../../../utils/hexToRGB'
 
 const NavigationItem = styled('li')`
-  color: ${(props) => hexToRGB(props.theme.colors.warSecondary, 0.85)};
+  color: ${(props) => hexToRGB(props.theme.palette.secondary.main, 0.85)};
 
   b {
     font-weight: 700;
@@ -11,19 +11,19 @@ const NavigationItem = styled('li')`
 
   a {
     display: flex;
-    color: ${(props) => hexToRGB(props.theme.colors.warSecondary, 0.85)};
-    transition: all ${(props) => props.theme.transitions.normal};
+    color: ${(props) => hexToRGB(props.theme.palette.secondary.main, 0.85)};
+    transition: all ${theme.transitions.normal};
   }
 
   &.active {
     a {
-      color: ${(props) => props.theme.colors.warLinkNight};
+      color: #6788ff;
     }
   }
 
   a {
     &:hover {
-      color: ${(props) => props.theme.colors.warLinkNightHover};
+      color: #526ed3;
     }
   }
 `

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import theme from '../../../assets/theme'
 
 import NavigationItem from './NavigationItem'
 
@@ -24,14 +25,14 @@ const NavigationMenu = styled('ol')`
       opacity: 0.25;
     }
 
-    @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+    @media (max-width: ${theme.breakpoints.md}) {
       width: calc(100% - 10px);
       text-align: center;
       margin-bottom: 20px;
     }
   }
 
-  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+  @media (max-width: ${theme.breakpoints.md}) {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;

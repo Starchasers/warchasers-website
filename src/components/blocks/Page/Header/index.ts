@@ -5,7 +5,7 @@ import Nav from './Nav'
 
 const Header = styled('header')`
   padding: 12px 0;
-  background: ${(props) => props.theme.colors.warPrimary};
+  background: ${(props) => props.theme.palette.primary.main};
 `
 
 type HeaderProps = typeof Header & {

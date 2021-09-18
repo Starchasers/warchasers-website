@@ -1,8 +1,9 @@
 import styled from '@emotion/styled'
+import theme from '../../../assets/theme'
 
 const DocumentContainer = styled('div')`
   grid-area: content;
-  color: ${(props) => props.theme.colors.warSecondary};
+  color: ${(props) => props.theme.palette.secondary.main};
   font-size: 18px;
   font-weight: 400;
 
@@ -30,7 +31,7 @@ const DocumentContainer = styled('div')`
 
   blockquote {
     padding: 12px;
-    border-left: 5px ${(props) => props.theme.colors.warPrimary} solid;
+    border-left: 5px ${(props) => props.theme.palette.primary.main} solid;
     border-radius: 2px;
     box-shadow: 0 4.5px 10px rgb(0 0 0 / 5%), 0 0.5px 1px rgb(0 0 0 / 5%);
     background-color: #303041;
@@ -41,11 +42,11 @@ const DocumentContainer = styled('div')`
   }
 
   a {
-    color: ${(props) => props.theme.colors.warLinkNight};
-    transition: all ${(props) => props.theme.transitions.normal};
+    color: #6788ff;
+    transition: all ${theme.transitions.normal};
 
     &:hover {
-      color: ${(props) => props.theme.colors.warLinkNightHover};
+      color: #526ed3;
     }
   }
 

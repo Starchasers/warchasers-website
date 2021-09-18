@@ -4,14 +4,14 @@ import { Asset, Entry } from 'contentful'
 import { Document } from '@contentful/rich-text-types'
 
 export interface IContentPageFields {
+  /** Title */
+  title: string
+
   /** Slug */
   slug: string
 
   /** Meta tags */
-  metaTags: IMetaTag[]
-
-  /** Title */
-  title: string
+  metaTags?: IMetaTag[] | undefined
 
   /** Content */
   content: Document
@@ -27,6 +27,37 @@ export interface IContentPage extends Entry<IContentPageFields> {
     contentType: {
       sys: {
         id: 'contentPage'
+        linkType: 'ContentType'
+        type: 'Link'
+      }
+    }
+  }
+}
+
+export interface ICoordinatesConfigurationFields {
+  /** Title */
+  title?: string | undefined
+
+  /** JS Functioon */
+  jsFunctioon: string
+
+  /** True message */
+  trueMessage: string
+
+  /** False message */
+  falseMessage: string
+}
+
+export interface ICoordinatesConfiguration extends Entry<ICoordinatesConfigurationFields> {
+  sys: {
+    id: string
+    type: string
+    createdAt: string
+    updatedAt: string
+    locale: string
+    contentType: {
+      sys: {
+        id: 'coordinatesConfiguration'
         linkType: 'ContentType'
         type: 'Link'
       }
@@ -93,7 +124,7 @@ export interface IMetaTag extends Entry<IMetaTagFields> {
   }
 }
 
-export type CONTENT_TYPE = 'contentPage' | 'layout' | 'metaTag'
+export type CONTENT_TYPE = 'contentPage' | 'coordinatesConfiguration' | 'layout' | 'metaTag'
 
 export type LOCALE_CODE = 'pl-PL'
 

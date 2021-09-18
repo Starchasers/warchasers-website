@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-
+import theme from '../../../assets/theme'
 import Content from './Content'
 import Footer from './Footer'
 import Header from './Header'
@@ -16,11 +16,11 @@ const Page = styled('div')`
     'footer';
   grid-template-rows: auto 1fr auto;
 
-  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+  @media (max-width: ${theme.breakpoints.md}) {
     grid-template-columns: 100%;
   }
 
-  @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
+  @media (max-width: ${theme.breakpoints.sm}) {
     grid-template-rows: auto 1fr auto;
   }
 `
