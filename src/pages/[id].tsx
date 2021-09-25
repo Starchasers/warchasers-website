@@ -34,7 +34,7 @@ export const getStaticProps: GetStaticProps<IContentPageProps, TGetStaticPaths> 
   }
 }
 
-const customPages = ['/', '/coordinates-calculation']
+const customPages = ['/', '/coordinates-calculation', '/teams']
 
 export const getStaticPaths: GetStaticPaths<TGetStaticPaths> = async () => {
   const contentPageData = await getAllContentPageData()

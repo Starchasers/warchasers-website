@@ -124,7 +124,69 @@ export interface IMetaTag extends Entry<IMetaTagFields> {
   }
 }
 
-export type CONTENT_TYPE = 'contentPage' | 'coordinatesConfiguration' | 'layout' | 'metaTag'
+export interface IWarTeamFields {
+  /** Title */
+  title: string
+
+  /** Members */
+  members: string[]
+}
+
+export interface IWarTeam extends Entry<IWarTeamFields> {
+  sys: {
+    id: string
+    type: string
+    createdAt: string
+    updatedAt: string
+    locale: string
+    contentType: {
+      sys: {
+        id: 'warTeam'
+        linkType: 'ContentType'
+        type: 'Link'
+      }
+    }
+  }
+}
+
+export interface IWarTeamsPageFields {
+  /** Group A name */
+  groupAName: string
+
+  /** GroupA */
+  groupA: IWarTeam[]
+
+  /** Group B name */
+  groupBName: string
+
+  /** GroupB */
+  groupB: IWarTeam[]
+}
+
+export interface IWarTeamsPage extends Entry<IWarTeamsPageFields> {
+  sys: {
+    id: string
+    type: string
+    createdAt: string
+    updatedAt: string
+    locale: string
+    contentType: {
+      sys: {
+        id: 'warTeamsPage'
+        linkType: 'ContentType'
+        type: 'Link'
+      }
+    }
+  }
+}
+
+export type CONTENT_TYPE =
+  | 'contentPage'
+  | 'coordinatesConfiguration'
+  | 'layout'
+  | 'metaTag'
+  | 'warTeam'
+  | 'warTeamsPage'
 
 export type LOCALE_CODE = 'pl-PL'
 
