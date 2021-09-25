@@ -31,7 +31,10 @@ const WarTeam = (props: IWarTeam) => (
         }
       `}
     >
-      <FontAwesomeIcon icon={faFortAwesome} style={{ marginRight: '4px' }} />
+      <FontAwesomeIcon
+        icon={faFortAwesome}
+        style={{ marginRight: '4px', height: '18px', width: '18px' }}
+      />
       {props.fields.title}
     </span>
     <div
