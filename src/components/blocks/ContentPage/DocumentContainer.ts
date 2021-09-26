@@ -78,7 +78,7 @@ const DocumentContainer = styled('div')`
   }
 
   h2 {
-    padding-top: 50px;
+    margin-top: 50px;
     margin-bottom: 20px;
     font-size: 27.5px;
   }

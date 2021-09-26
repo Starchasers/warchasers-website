@@ -6,6 +6,7 @@ const Title = styled('h1')`
   font-size: 36px;
   color: ${(props) => hexToRGB(props.theme.palette.secondary.main, 0.64)};
   font-weight: 300;
+  margin-bottom: 50px;
 
   @media (max-width: ${theme.breakpoints.md}) {
     margin-bottom: 20px;
