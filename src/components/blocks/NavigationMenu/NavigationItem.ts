@@ -12,7 +12,7 @@ const NavigationItem = styled('li')`
   a {
     display: flex;
     color: ${(props) => hexToRGB(props.theme.palette.secondary.main, 0.85)};
-    transition: all ${theme.transitions.normal};
+    transition: color ${theme.transitions.normal};
   }
 
   &.active {

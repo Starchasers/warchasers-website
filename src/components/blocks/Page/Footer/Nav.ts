@@ -8,7 +8,7 @@ const Nav = styled('nav')`
 
   a {
     color: #ffffff;
-    transition: ${theme.transitions.normal};
+    transition: color ${theme.transitions.normal};
 
     &:hover {
       color: #d7d7d7;

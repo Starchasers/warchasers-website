@@ -22,7 +22,7 @@ class MyDocument extends Document {
           <meta name='msapplication-TileColor' content='#526ed3' />
           <meta name='theme-color' content='#526ed3' />
         </Head>
-        <body style={{ backgroundColor: '#252532' }}>
+        <body style={{ backgroundColor: '#252532', fontSize: '16ox', lineHeight: '1.5' }}>
           <Main />
           <NextScript />
         </body>

@@ -43,7 +43,7 @@ const DocumentContainer = styled('div')`
 
   a {
     color: #6788ff;
-    transition: all ${theme.transitions.normal};
+    transition: color ${theme.transitions.normal};
 
     &:hover {
       color: #526ed3;
