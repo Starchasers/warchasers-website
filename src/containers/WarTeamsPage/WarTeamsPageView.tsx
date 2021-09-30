@@ -14,6 +14,8 @@ import { TypographyP } from '../../components/elements/Typography'
 import DesktopContainer from '../../components/elements/DesktopContainer'
 import MobileContainer from '../../components/elements/MobileContainer'
 import theme from '../../assets/theme'
+import ContentfulImage from '../../utils/contentful/ContentfulImage'
+import GuildTitle from './components/GuildTitle'
 
 interface IWarTeamsPageViewProps extends IWarTeamsPageProps, IWarTeamsPageStateProps {}
 
@@ -27,7 +29,7 @@ const WarTeamsPageView = (props: IWarTeamsPageViewProps) => (
       <ContentPage.DocumentContainer>
         <ContentPage.Title>{props.contentPage.fields.title}</ContentPage.Title>
         {documentToReactComponents(props.contentPage.fields.content, options)}
-        <DesktopContainer breakpoint={theme.breakpoints.md}>
+        <DesktopContainer breakpoint={theme.breakpoints.lg}>
           <Columns
             className={css`
               position: relative;
@@ -44,28 +46,42 @@ const WarTeamsPageView = (props: IWarTeamsPageViewProps) => (
                 background: ${theme.colors.warSecondary};
                 opacity: 0.25;
 
-                @media (max-width: ${theme.breakpoints.md}) {
+                @media (max-width: ${theme.breakpoints.lg}) {
                   display: none;
                 }
               }
             `}
           >
-            <TypographyP
-              className={css`
-                text-align: center;
-                font-size: 24px;
-              `}
-            >
-              {props.warTeamsPage.fields.groupAName}
-            </TypographyP>
-            <TypographyP
-              className={css`
-                text-align: center;
-                font-size: 24px;
-              `}
-            >
-              {props.warTeamsPage.fields.groupBName}
-            </TypographyP>
+            <GuildTitle>
+              {props.warTeamsPage.fields.groupABanner ? (
+                <ContentfulImage {...props.warTeamsPage.fields.groupABanner} />
+              ) : (
+                <div />
+              )}
+              <TypographyP
+                className={css`
+                  text-align: center;
+                  font-size: 24px;
+                `}
+              >
+                {props.warTeamsPage.fields.groupAName}
+              </TypographyP>
+            </GuildTitle>
+            <GuildTitle>
+              {props.warTeamsPage.fields.groupBBanner ? (
+                <ContentfulImage {...props.warTeamsPage.fields.groupBBanner} />
+              ) : (
+                <div />
+              )}
+              <TypographyP
+                className={css`
+                  text-align: center;
+                  font-size: 24px;
+                `}
+              >
+                {props.warTeamsPage.fields.groupBName}
+              </TypographyP>
+            </GuildTitle>
             {Array.from(
               Array(
                 props.warTeamsPage.fields.groupA.length > props.warTeamsPage.fields.groupB.length
@@ -84,13 +100,14 @@ const WarTeamsPageView = (props: IWarTeamsPageViewProps) => (
             ))}
           </Columns>
         </DesktopContainer>
-        <MobileContainer>
+        <MobileContainer breakpoint={theme.breakpoints.lg}>
           <Columns
             className={css`
               position: relative;
               grid-column-gap: 16px;
               grid-row-gap: 64px;
             `}
+            columns={'1fr'}
           >
             <Columns
               columns={'1fr'}
@@ -98,14 +115,21 @@ const WarTeamsPageView = (props: IWarTeamsPageViewProps) => (
                 grid-row-gap: 8px;
               `}
             >
-              <TypographyP
-                className={css`
-                  text-align: center;
-                  font-size: 24px;
-                `}
-              >
-                {props.warTeamsPage.fields.groupAName}
-              </TypographyP>
+              <GuildTitle>
+                {props.warTeamsPage.fields.groupABanner ? (
+                  <ContentfulImage {...props.warTeamsPage.fields.groupABanner} />
+                ) : (
+                  <div />
+                )}
+                <TypographyP
+                  className={css`
+                    text-align: center;
+                    font-size: 24px;
+                  `}
+                >
+                  {props.warTeamsPage.fields.groupAName}
+                </TypographyP>
+              </GuildTitle>
               {props.warTeamsPage.fields.groupA?.map((team) => (
                 <WarTeam key={team.sys.id} {...team} />
               ))}
@@ -116,14 +140,21 @@ const WarTeamsPageView = (props: IWarTeamsPageViewProps) => (
                 grid-row-gap: 8px;
               `}
             >
-              <TypographyP
-                className={css`
-                  text-align: center;
-                  font-size: 24px;
-                `}
-              >
-                {props.warTeamsPage.fields.groupBName}
-              </TypographyP>
+              <GuildTitle>
+                {props.warTeamsPage.fields.groupBBanner ? (
+                  <ContentfulImage {...props.warTeamsPage.fields.groupBBanner} />
+                ) : (
+                  <div />
+                )}
+                <TypographyP
+                  className={css`
+                    text-align: center;
+                    font-size: 24px;
+                  `}
+                >
+                  {props.warTeamsPage.fields.groupBName}
+                </TypographyP>
+              </GuildTitle>
               {props.warTeamsPage.fields.groupB?.map((team) => (
                 <WarTeam key={team.sys.id} {...team} />
               ))}
