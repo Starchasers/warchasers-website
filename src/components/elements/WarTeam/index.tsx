@@ -18,6 +18,9 @@ const WarTeam = (props: IWarTeam) => (
         text-align: center;
         padding: 4px 16px 6px;
         margin: 0 auto;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
 
         &::after {
           position: absolute;
@@ -33,18 +36,26 @@ const WarTeam = (props: IWarTeam) => (
     >
       <FontAwesomeIcon
         icon={faFortAwesome}
-        style={{ marginRight: '4px', height: '18px', width: '18px' }}
+        style={{ marginRight: '4px', height: '20px', width: '20px', marginTop: '-5px' }}
       />
       {props.fields.title}
     </span>
     <div
       className={css`
         display: flex;
-        column-gap: 8px;
-        row-gap: 8px;
-        justify-content: center;
-        margin: 18px 0;
+        column-gap: 6px;
+        row-gap: 6px;
+        align-items: center;
+        flex-direction: column;
+        margin: 8px 0 16px;
         flex-wrap: wrap;
+        font-size: 16px;
+
+        @media (max-width: ${theme.breakpoints.lg}) {
+          align-items: unset;
+          justify-content: center;
+          flex-direction: row;
+        }
       `}
     >
       {props.fields.members.map((member) => (

@@ -32,7 +32,7 @@ const WarTeamsPageView = (props: IWarTeamsPageViewProps) => (
             className={css`
               position: relative;
               grid-column-gap: 16px;
-              grid-row-gap: 8px;
+              grid-row-gap: 16px;
 
               &::after {
                 position: absolute;
