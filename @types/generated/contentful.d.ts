@@ -14,7 +14,7 @@ export interface IContentPageFields {
   metaTags?: IMetaTag[] | undefined
 
   /** Content */
-  content: Document
+  content?: Document | undefined
 }
 
 export interface IContentPage extends Entry<IContentPageFields> {
@@ -130,6 +130,9 @@ export interface IWarTeamFields {
 
   /** Members */
   members: string[]
+
+  /** Banner */
+  banner?: Asset | undefined
 }
 
 export interface IWarTeam extends Entry<IWarTeamFields> {
@@ -156,11 +159,17 @@ export interface IWarTeamsPageFields {
   /** GroupA */
   groupA: IWarTeam[]
 
+  /** Group A banner */
+  groupABanner?: Asset | undefined
+
   /** Group B name */
   groupBName: string
 
   /** GroupB */
   groupB: IWarTeam[]
+
+  /** Group B banner */
+  groupBBanner?: Asset | undefined
 }
 
 export interface IWarTeamsPage extends Entry<IWarTeamsPageFields> {

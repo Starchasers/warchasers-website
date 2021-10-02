@@ -1,19 +1,35 @@
 import { css } from '@emotion/css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFortAwesome } from '@fortawesome/free-brands-svg-icons'
 import React from 'react'
 import { IWarTeam } from '../../../../@types/generated/contentful'
 import theme from '../../../assets/theme'
+import ContentfulImage from '../../../utils/contentful/ContentfulImage'
 
 const WarTeam = (props: IWarTeam) => (
   <div
     className={css`
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      grid-template-areas:
+        'banner title'
+        'banner nicknames';
+      justify-content: center;
+      padding: 0 32px;
+
+      @media (max-width: ${theme.breakpoints.lg}) {
+        padding: 0;
+      }
     `}
   >
+    <div
+      className={css`
+        grid-area: banner;
+      `}
+    >
+      {props.fields.banner ? <ContentfulImage {...props.fields.banner} /> : <div />}
+    </div>
     <span
       className={css`
+        grid-area: title;
         position: relative;
         text-align: center;
         padding: 4px 16px 6px;
@@ -34,14 +50,11 @@ const WarTeam = (props: IWarTeam) => (
         }
       `}
     >
-      <FontAwesomeIcon
-        icon={faFortAwesome}
-        style={{ marginRight: '4px', height: '20px', width: '20px', marginTop: '-5px' }}
-      />
       {props.fields.title}
     </span>
     <div
       className={css`
+        grid-area: nicknames;
         display: flex;
         column-gap: 6px;
         row-gap: 6px;
