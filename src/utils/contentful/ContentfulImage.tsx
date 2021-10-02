@@ -10,10 +10,14 @@ import { Asset } from 'contentful'
  **/
 const ContentfulImage = (props: Asset) => (
   <Image
-    src={'https:' + props.fields.file.url}
+    src={`https:${props.fields.file.url}?fm=jpg`}
     alt={props.fields.title}
     width={props.fields.file.details.image.width}
     height={props.fields.file.details.image.height}
+    placeholder={'blur'}
+    blurDataURL={`https:${props.fields.file.url}?fm=jpg&w=${Math.floor(
+      Number(props.fields.file.details.image.width) / 5
+    )}&q=10`}
   />
 )
 
