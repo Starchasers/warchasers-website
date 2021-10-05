@@ -1,26 +1,48 @@
 import { css } from '@emotion/css'
 import React from 'react'
+import format from 'date-fns/format'
 
 import Page from '../../blocks/Page'
 import { LayoutProps } from './index'
 import Container from '../Container'
+import theme from '../../../assets/theme'
+import Columns from '../Columns'
 
 const Footer = (props: Omit<Omit<LayoutProps, 'title'>, 'children'>) => (
   <Page.Footer {...props}>
     <Page.Footer.Nav>
       <Container>
-        <div>
-          <span
-            className={css`
-              opacity: 0.5;
-            `}
-          >
-            Made by
-          </span>{' '}
-          <a href={'https://github.com/Starchasers'} target={'_blank'} rel={'noopener noreferrer'}>
-            Starchasers
-          </a>
-        </div>
+        <Columns columns={'auto 1fr auto'} breakpoint={theme.breakpoints.sm}>
+          <div>
+            <span
+              className={css`
+                opacity: 0.5;
+              `}
+            >
+              Made by
+            </span>{' '}
+            <a
+              href={'https://github.com/Starchasers'}
+              target={'_blank'}
+              rel={'noopener noreferrer'}
+            >
+              Starchasers
+            </a>
+          </div>
+          <div />
+          {props.contentPage.sys.updatedAt && (
+            <div>
+              <span
+                className={css`
+                  opacity: 0.5;
+                `}
+              >
+                Last modified:{' '}
+                {format(new Date(props.contentPage.sys.updatedAt), 'dd.MM.yyyy kk:mm')}
+              </span>
+            </div>
+          )}
+        </Columns>
       </Container>
     </Page.Footer.Nav>
   </Page.Footer>

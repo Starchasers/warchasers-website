@@ -8,8 +8,9 @@ import Footer from './Footer'
 
 import { ILayoutData } from '../../../utils/contentful/models/getLayoutData'
 import { IMetaTag } from '../../../../@types/generated/contentful'
+import { IContentPageData } from '../../../utils/contentful/models/getContentPageData'
 
-export interface LayoutProps extends ILayoutData {
+export interface LayoutProps extends ILayoutData, IContentPageData {
   children: ReactChild
   title?: string
   metaTags?: IMetaTag[]
