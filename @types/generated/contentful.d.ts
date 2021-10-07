@@ -79,7 +79,7 @@ export interface ILayoutFields {
   metaTags: IMetaTag[]
 
   /** ContentPages */
-  contentPages: IContentPage[]
+  contentPages: (IContentPage | INavigationLink)[]
 }
 
 export interface ILayout extends Entry<ILayoutFields> {
@@ -117,6 +117,31 @@ export interface IMetaTag extends Entry<IMetaTagFields> {
     contentType: {
       sys: {
         id: 'metaTag'
+        linkType: 'ContentType'
+        type: 'Link'
+      }
+    }
+  }
+}
+
+export interface INavigationLinkFields {
+  /** Title */
+  title: string
+
+  /** Slug */
+  slug: string
+}
+
+export interface INavigationLink extends Entry<INavigationLinkFields> {
+  sys: {
+    id: string
+    type: string
+    createdAt: string
+    updatedAt: string
+    locale: string
+    contentType: {
+      sys: {
+        id: 'navigationLink'
         linkType: 'ContentType'
         type: 'Link'
       }
@@ -197,6 +222,7 @@ export type CONTENT_TYPE =
   | 'coordinatesConfiguration'
   | 'layout'
   | 'metaTag'
+  | 'navigationLink'
   | 'warTeam'
   | 'warTeamsPage'
 

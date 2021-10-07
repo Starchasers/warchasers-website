@@ -1,11 +1,11 @@
 import { css } from '@emotion/css'
 import React from 'react'
 import Link from 'next/link'
-import { IContentPage } from '../../../@types/generated/contentful'
+import { IContentPage, INavigationLink } from '../../../@types/generated/contentful'
 import NavigationMenu from '../blocks/NavigationMenu'
 
 interface IPageNavigation {
-  contentPages: IContentPage[]
+  contentPages: (IContentPage | INavigationLink)[]
   activePage: IContentPage
 }
 
@@ -19,14 +19,23 @@ const PageNavigation = (props: IPageNavigation) => (
       <NavigationMenu.Item>
         <b>Navigation</b>
       </NavigationMenu.Item>
-      {props.contentPages?.map((contentPage, index) => (
+      {props.contentPages?.map((link, index) => (
         <NavigationMenu.Item
-          key={contentPage.sys.id + index}
-          className={contentPage.sys.id === props.activePage.sys.id ? 'active' : undefined}
+          key={link.sys.id + index}
+          className={link.sys.id === props.activePage.sys.id ? 'active' : undefined}
         >
-          <Link href={contentPage.fields.slug} passHref>
-            <a>{contentPage.fields.title}</a>
-          </Link>
+          {link.sys.contentType.sys.id === 'contentPage' && (
+            <Link href={link.fields.slug} passHref>
+              <a>{link.fields.title}</a>
+            </Link>
+          )}
+          {link.sys.contentType.sys.id === 'navigationLink' && (
+            <Link href={link.fields.slug} passHref>
+              <a target={'_blank'} rel='noreferrer noopener'>
+                {link.fields.title}
+              </a>
+            </Link>
+          )}
         </NavigationMenu.Item>
       ))}
     </NavigationMenu>
