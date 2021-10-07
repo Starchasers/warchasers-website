@@ -133,6 +133,9 @@ export interface IWarTeamFields {
 
   /** Banner */
   banner?: Asset | undefined
+
+  /** isDead */
+  isDead: boolean
 }
 
 export interface IWarTeam extends Entry<IWarTeamFields> {

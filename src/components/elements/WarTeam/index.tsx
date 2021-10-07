@@ -19,6 +19,7 @@ const WarTeam = (props: IWarTeam) => (
         padding: 0;
       }
     `}
+    style={props.fields.isDead && { opacity: '0.5' }}
   >
     <div
       className={css`
@@ -37,6 +38,7 @@ const WarTeam = (props: IWarTeam) => (
         font-size: 20px;
         display: flex;
         align-items: center;
+        word-break: break-all;
 
         &::after {
           position: absolute;
@@ -49,6 +51,7 @@ const WarTeam = (props: IWarTeam) => (
           opacity: 0.25;
         }
       `}
+      style={props.fields.isDead && { textDecoration: 'line-through' }}
     >
       {props.fields.title}
     </span>
