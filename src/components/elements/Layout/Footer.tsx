@@ -3,12 +3,15 @@ import React from 'react'
 import format from 'date-fns/format'
 
 import Page from '../../blocks/Page'
-import { LayoutProps } from './index'
 import Container from '../Container'
 import theme from '../../../assets/theme'
 import Columns from '../Columns'
 
-const Footer = (props: Omit<Omit<LayoutProps, 'title'>, 'children'>) => (
+export interface IFooter {
+  updatedAt?: Date
+}
+
+const Footer = (props: IFooter) => (
   <Page.Footer {...props}>
     <Page.Footer.Nav>
       <Container>
@@ -30,15 +33,14 @@ const Footer = (props: Omit<Omit<LayoutProps, 'title'>, 'children'>) => (
             </a>
           </div>
           <div />
-          {props.contentPage.sys.updatedAt && (
+          {props.updatedAt && (
             <div>
               <span
                 className={css`
                   opacity: 0.5;
                 `}
               >
-                Last modified:{' '}
-                {format(new Date(props.contentPage.sys.updatedAt), 'dd.MM.yyyy kk:mm')}
+                Last modified: {format(new Date(props.updatedAt), 'dd.MM.yyyy kk:mm')}
               </span>
             </div>
           )}

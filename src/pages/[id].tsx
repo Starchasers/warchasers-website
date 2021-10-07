@@ -1,5 +1,5 @@
-import React from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
+import React from 'react'
 
 import Layout from '../components/elements/Layout'
 import getLayoutData, { ILayoutData } from '../utils/contentful/models/getLayoutData'

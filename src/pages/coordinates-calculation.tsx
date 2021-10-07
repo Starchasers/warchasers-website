@@ -1,3 +1,4 @@
+import { GetStaticProps } from 'next'
 import React from 'react'
 
 import Layout from '../components/elements/Layout'
@@ -21,7 +22,7 @@ const CoordinatesCalculation = (props: ICoordinatesCalculationPageProps) => (
   </Layout>
 )
 
-export const getStaticProps = async (): Promise<{ props: ICoordinatesCalculationPageProps }> => {
+export const getStaticProps: GetStaticProps<ICoordinatesCalculationPageProps> = async () => {
   const layout = await getLayoutData()
   const contentPage = await getContentPageData('coordinates-calculation')
   const coordinatesData = await getCoordinatesData()

@@ -1,3 +1,4 @@
+import { GetStaticProps } from 'next'
 import React from 'react'
 
 import Layout from '../components/elements/Layout'
@@ -17,7 +18,7 @@ const Home = (props: IHomePageProps) => (
   </Layout>
 )
 
-export const getStaticProps = async (): Promise<{ props: IHomePageProps }> => {
+export const getStaticProps: GetStaticProps<IHomePageProps> = async () => {
   const layout = await getLayoutData()
   const contentPage = await getContentPageData('')
 
